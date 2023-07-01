@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "target":"es6",
+        "module": "CommonJS",
+        "strict":true ,
+        "esModuleInterop": true,
+        "resolveJsonModule": true,
+        "outDir": "dist",
+        "ignoreDeprecations":"5.0"
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}
