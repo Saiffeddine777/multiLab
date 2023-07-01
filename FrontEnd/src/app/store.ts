@@ -1,10 +1,12 @@
 import {configureStore} from "@reduxjs/toolkit"
 import servicesReducer from "../features/services/Services-api-slice"
+import  messageReducer  from "../features/Contact/Contact-api-slice"
 
 
 const store = configureStore({
     reducer:{
-        services:servicesReducer
+        services:servicesReducer,
+        message:messageReducer
     }
 })
 
