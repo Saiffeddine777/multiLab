@@ -9,6 +9,7 @@ export const createMessage=  async function(req:any,res:any){
         email,
         adress,
         adressed} = req.body
+        console.log(req.body)
     try{
        const results = await createAMessage(firstName,
         lastName,

@@ -16,9 +16,9 @@ export default function Contact() {
   const message = useAppSelector((state) => state.message);
   const dispatch = useAppDispatch();
 
-  useEffect(() => {
-    console.log(message.value);
-  }, [message.value]);
+  // useEffect(() => {
+  //   console.log(message.value);
+  // }, [message.value]);
 
   return (
     <div className="formContainer">
@@ -95,7 +95,7 @@ export default function Contact() {
         <input
           type="button"
           value="Send Message"
-          onClick={() => dispatch(createMessage())}
+          onClick={() => dispatch(createMessage(message.value))}
         />
       </div>
 

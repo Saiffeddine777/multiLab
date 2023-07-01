@@ -16,7 +16,7 @@ export default function Services() {
     {services.loading && <p>..loading</p>}
     <ul>
     {services.services && services.services.map((e,i)=>{
-        return <li>{e.title}</li>
+        return <li key ={e._id}>{e.title}</li>
     })}
     </ul>
     </>

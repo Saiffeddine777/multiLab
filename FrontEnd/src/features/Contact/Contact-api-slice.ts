@@ -1,7 +1,7 @@
 import {
   createSlice,
   createAsyncThunk,
-  PayloadAction,
+  PayloadAction
 }
  from "@reduxjs/toolkit";
 import axios from "axios";
@@ -30,7 +30,9 @@ const message: Message = {
   adressed: false,
 };
 
-export const createMessage = createAsyncThunk("/create/message", async () => {
+
+
+export const createMessage = createAsyncThunk("/create/message", async (message:Message) => {
   return axios
     .post(`${Address}/api/messages/create`, message)
     .then((res) => res.data);
