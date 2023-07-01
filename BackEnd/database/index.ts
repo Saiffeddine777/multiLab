@@ -1,5 +1,5 @@
 import mongoose from "./database"
-import {Document } from "mongoose"
+import { Document } from "mongoose"
 
 interface ServiceDocument extends Document{
    title : string,  
@@ -12,7 +12,7 @@ interface ServiceDocument extends Document{
 
 const ServiceSchema = new mongoose.Schema<ServiceDocument>({
     title:{type:String,required:true},          // service Name 
-    sector:{type :String,required :true},       // food , eviroment or animal food
+    sector:{type :String,required :true},       // food , eviroment or animal food //sector 
     category:{type:String ,required:true},       // domain or realm (traing .., micobiology physicho Chemistry)
     analysis:{type :String },                    // the type of analysis performed (on menerals physiqco chimique...)
     description:{type :String ,required:true},   //brief paragraph of describing the process or the 
@@ -40,9 +40,26 @@ const MessageSchema = new mongoose.Schema<MessageDocument>({
    adressed:{type :Boolean , required:true}
 })
 
+interface ReviewsDocument extends Document{
+   reviewerName:string,
+   email:string,
+   text :string,
+   rating : number
+}
+
+const ReviewSchema = new mongoose.Schema<ReviewsDocument>({
+   reviewerName:{type:String,required:true},
+   email:{type:String,required: true},
+   text:{type:String,required:true},
+   rating:{type:Number,required:true}
+})
+
+
+
 
 export const Service = mongoose.model<ServiceDocument>("Service",ServiceSchema)
 export const Message = mongoose.model<MessageDocument>("Message",MessageSchema)
+export const Review = mongoose.model<ReviewsDocument>("Review",ReviewSchema)
 
 
 

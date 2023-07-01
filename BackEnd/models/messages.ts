@@ -21,3 +21,16 @@ export const createAMessage = function (
     adressed: adressed
   });
 };
+
+
+export const findAllMessages = function (){
+  return Message.find()
+}
+
+export const findOneMessage = function(id:string){
+  return Message.findById(id)
+}
+
+export const destroyMessage =  function(id:string){
+  return Message.findByIdAndRemove(id)
+}

@@ -1,4 +1,4 @@
-import {createAMessage} from "../models/messages"
+import {createAMessage, destroyMessage, findAllMessages, findOneMessage} from "../models/messages"
 
 export const createMessage=  async function(req:any,res:any){
     const {   firstName,
@@ -26,3 +26,44 @@ export const createMessage=  async function(req:any,res:any){
         res.status(500).json(err)
     }
 }
+
+
+export const getAllMessages =  async function(req:any,res:any){
+    try{
+       const results = await findAllMessages()
+       console.log(results)
+       res.status(200).json(results)
+    }
+    catch(err){
+        console.log(err)
+        res.status(500).json(err)
+    }
+}
+
+export const getOneMessage = async function(req:any,res:any){
+    const {id}= req.params
+    try{
+       const results = await findOneMessage(id)
+       console.log(results)
+       res.status(200).json(results)
+    }
+    catch(err){
+        console.log(err)
+        res.status(500).json(err)
+    }
+}
+
+
+export const removeAMessage = async function(req:any,res:any){
+    const {id} = req.params
+    try{
+        const results = await destroyMessage(id)
+        console.log(results)
+        res.status(200).json(results)
+     }
+     catch(err){
+         console.log(err)
+         res.status(500).json(err)
+     }
+}
+
