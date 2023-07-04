@@ -1,0 +1,7 @@
+export const pathServices = "/services"
+export const pathContact = "/contact"
+export const pathHomePage="/"
+export const pathQualifications ="/qualifications"
+export const pathTeam ="/team"
+export const pathCerfications ="/certifications"
+export const pathPortfolio ="/portfolio"

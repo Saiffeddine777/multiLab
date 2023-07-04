@@ -10,15 +10,13 @@ import {
   phoneNumberReducer,
   titleReducer,
   messageReducer,
-} from "./Contact-api-slice";
+} from "./Contact.-api-slice";
 
 export default function Contact() {
   const message = useAppSelector((state) => state.message);
   const dispatch = useAppDispatch();
 
-  // useEffect(() => {
-  //   console.log(message.value);
-  // }, [message.value]);
+
 
   return (
     <div className="formContainer">
