@@ -1,9 +1,9 @@
 import{createService, destoryAService, findAllServices, findOneService, updateOneService} from "../models/services"
 
 export const createOneService=  async function(req:any,res:any){
-    const {title,sector,category,analysis,description,accredited} = req.body
+    const {title,sector,category,analysis,description,imageUrl,accredited} = req.body
     try{
-       const results = await createService(title,sector,category,analysis,description,accredited)
+       const results = await createService(title,sector,category,analysis,description,imageUrl,accredited)
        console.log(results)
        res.status(200).json(results)
     }

@@ -6,6 +6,7 @@ export const createService = function (
   category: string,
   analysis: string,
   description: string,
+  imageUrl:string,
   accredited: boolean
 ) {
   return Service.create({
@@ -14,6 +15,7 @@ export const createService = function (
     category: category,
     analysis: analysis,
     description: description,
+    imageUrl:imageUrl,
     accredited: accredited,
   });
 };
