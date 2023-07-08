@@ -1,0 +1,31 @@
+<p>Add a service</p>
+
+<form>
+    <label for ="title">Service Title: </label>
+    <br/>
+    <input name="title" [(ngModel)]="title" />
+    <br/>
+    <label for = "sector">Sector: </label>
+    <br/>
+    <input name="sector" [(ngModel)]="sector"/>
+    <br/>
+    <label for ="category">Category: </label>
+    <br/>
+    <input name="category" [(ngModel)]="category"/>
+    <br/>
+    <label for ="analysis">Analysis: </label>
+    <br/>
+    <input name="analysis" [(ngModel)]="analysis"/>
+    <br/>
+    <label for ="description">Description: </label>
+    <br/>
+    <textarea name="description" [(ngModel)]="description"></textarea>
+    <br/>
+    <label for ="image" >Put an Image Here: </label>
+    <br/>
+    <input name="title" type="file" [(ngModel)]="file"/>
+    <br/>
+    <input type ="button" value="Submit Service" (click)="handleServiceInsertion()" />
+    
+</form>
+
