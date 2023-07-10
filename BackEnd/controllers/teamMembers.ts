@@ -1,10 +1,22 @@
+import { pathOfTheFile } from "../files/multer"
 import {createTeamMember, deleteOneTeamMember, findAllTeamMember, findOneTeamMember, updateOneTeamMember} from "../models/teamMembers"
 
 export const makeATeamMember = async function(req:any,res:any){
-    const {teamMember , teamMemberDescription,teamMemberEmail,teamMemberPhotoUrl } = req.body
+    const {teamMember,teamMemberRole , teamMemberDescription,teamMemberEmail,teamMemberPhotoUrl } = req.body
     try{
-      const results = await createTeamMember(teamMember,teamMemberDescription,teamMemberEmail,teamMemberPhotoUrl)
+      const results = await createTeamMember(teamMember,teamMemberRole,teamMemberDescription,teamMemberEmail,teamMemberPhotoUrl)
       res.status(200).json(results)
+    }
+    catch(err){
+        console.log(err)
+        res.status(500).json(err)
+    }
+}
+
+export const insertTeamImage= async function(req:any,res:any){
+    try{
+        console.log("team Member Image inserted")
+        res.status(200).json(pathOfTheFile)
     }
     catch(err){
         console.log(err)

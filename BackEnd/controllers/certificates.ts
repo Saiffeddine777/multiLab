@@ -1,3 +1,4 @@
+import { pathOfTheFile } from "../files/multer"
 import {createCertificate, deleteOneCertficate, findAllCertficates, findOneCerticate, updateOneCertificate} from "../models/certificates"
 
 export const makeAcertificate = async function(req:any,res:any){
@@ -9,6 +10,17 @@ export const makeAcertificate = async function(req:any,res:any){
     catch(err){
        console.log(err)
        res.status(500).json(err)
+    }
+}
+
+export const insertCertficateFile = async function(req:any,res:any){
+    try{
+        console.log("certificate inserted")
+        res.status(200).json(pathOfTheFile)
+    }
+    catch(err){
+        console.log(err)
+        res.status(500).json(err)
     }
 }
 

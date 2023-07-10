@@ -1,8 +1,10 @@
 import express from "express"
-import {changeOneSerrvice, createOneService, getAllServices, getOneService, removeAService} from "../controllers/services"
+import {changeOneSerrvice, createOneService, createServiceImage, getAllServices, getOneService, removeAService} from "../controllers/services"
+import { uploadServices } from "../files/multer"
 
 const servicesRouter = express.Router()
 servicesRouter.post("/create",createOneService)
+servicesRouter.post("/image",uploadServices.single("image"),createServiceImage)
 servicesRouter.get("/all",getAllServices)
 servicesRouter.get("/one/:id",getOneService)
 servicesRouter.put("/update/:id",changeOneSerrvice)

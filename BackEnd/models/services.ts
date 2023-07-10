@@ -7,7 +7,7 @@ export const createService = function (
   analysis: string,
   description: string,
   imageUrl:string,
-  accredited: boolean
+  accredited:boolean
 ) {
   return Service.create({
     title: title,
@@ -16,7 +16,7 @@ export const createService = function (
     analysis: analysis,
     description: description,
     imageUrl:imageUrl,
-    accredited: accredited,
+    accredited: accredited
   });
 };
 

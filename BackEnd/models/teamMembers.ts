@@ -2,12 +2,14 @@ import {TeamMember} from "../database"
 
 export const createTeamMember = function(
     teamMember:string,
+    teamMemberRole:string,
     teamMemberDescription :string,
     teamMemberEmail :string,
     teamMemberPhotoUrl :string
   ){
     return TeamMember.create({
         teamMember:teamMember,
+        teamMemberRole:teamMemberRole,
         teamMemberDescription :teamMemberDescription,
         teamMemberEmail :teamMemberEmail,
         teamMemberPhotoUrl :teamMemberPhotoUrl

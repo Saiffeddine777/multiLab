@@ -73,6 +73,7 @@ const ClientSchema = new mongoose.Schema<ClientDocument>({
 
 interface TeamMemberDocument extends Document{
    teamMember:string,
+   teamMemberRole :string,
    teamMemberDescription :string,
    teamMemberEmail :string,
    teamMemberPhotoUrl :string
@@ -80,6 +81,7 @@ interface TeamMemberDocument extends Document{
 
 const TeamMemberSchema = new mongoose.Schema<TeamMemberDocument>({
    teamMember:{type :String,required:true},
+   teamMemberRole:{type:String,required:true},
    teamMemberDescription:{type:String,required:true},
    teamMemberEmail:{type:String,required :true},
    teamMemberPhotoUrl:{type:String}

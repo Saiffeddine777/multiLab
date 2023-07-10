@@ -3,27 +3,34 @@
 <form>
     <label for ="title">Service Title: </label>
     <br/>
-    <input name="title" [(ngModel)]="title" />
+    <input name="title" [(ngModel)]="title" (change)="handleTitleChange($event)" />
     <br/>
     <label for = "sector">Sector: </label>
     <br/>
-    <input name="sector" [(ngModel)]="sector"/>
+    <input name="sector" [(ngModel)]="sector" (change)="handleSectorChange($event)"/>
     <br/>
     <label for ="category">Category: </label>
     <br/>
-    <input name="category" [(ngModel)]="category"/>
+    <input name="category" [(ngModel)]="category" (change)="handleCategoryChange($event)"/>
     <br/>
     <label for ="analysis">Analysis: </label>
     <br/>
-    <input name="analysis" [(ngModel)]="analysis"/>
+    <input name="analysis" [(ngModel)]="analysis" (change)="handleAnalysisChange($event)"/>
     <br/>
     <label for ="description">Description: </label>
     <br/>
-    <textarea name="description" [(ngModel)]="description"></textarea>
+    <textarea name="description" [(ngModel)]="description" (change)="handleDescriptionChange($event)"></textarea>
     <br/>
     <label for ="image" >Put an Image Here: </label>
     <br/>
-    <input name="title" type="file" [(ngModel)]="file"/>
+    <input name="image" type="file" (change)="handleFileChange($event)"/>
+    <br/>
+    <label>Select Accreditation</label>
+    <br/>
+    <select (change)="handleAccreditedChange($event)">
+        <option value="accredited">acceredited</option>
+        <option value="not accredited">Not Accredited</option>
+    </select>
     <br/>
     <input type ="button" value="Submit Service" (click)="handleServiceInsertion()" />
     

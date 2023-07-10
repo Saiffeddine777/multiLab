@@ -1,0 +1,25 @@
+<p>Add-Team-Member</p>
+
+<form>
+    <label>Team Member Full Name</label>
+    <br/>
+    <input name="teamMember" type="text" [(ngModel)]="teamMember" (change)="handleTeamMemberChange($event)"/>
+    <br/>
+    <label>Team Member Role</label>
+    <br/>
+    <input name="teamMemberRole" type="text" [(ngModel)]="teamMemberRole" (change)="handleTeamMemberRoleChange($event)"/>
+    <br/>
+    <label>Team Member description</label>
+    <br/>
+    <textarea name="teamMemberDescription" type="text" [(ngModel)]="teamMemberDescription" (change)="handleTeamMemberDescriptionChange($event)"></textarea>
+    <br/>
+    <label>Team Member Email</label>
+    <br/>
+    <input name="teamMemberEmail" type="text" [(ngModel)]="teamMemberEmail" (change)="handleTeamMemberEmailChange($event)"/>
+    <br/>
+    <label>Team Member Image : </label>
+    <br/>
+    <input name="teamImage" type="file"  (change)="handleTeamMemberImageChange($event)"/>
+    <br/>
+    <input value="Insert Team Member" type="button" (click)="handleTeamMemberInsertion()"/>
+</form>

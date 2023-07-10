@@ -1,0 +1,21 @@
+<p>Add Certificate</p>
+
+<form>
+  <label for="name">Certificate Name</label>
+  <br/>
+  <input name="name" [(ngModel)]="name" type="text" (change)="handleNameChange($event)"/>
+  <br/>
+  <label for="reference">Certificate Reference</label>
+  <br/>
+  <input name="reference" [(ngModel)]="reference" type="text" (change)="handleReferenceChange($event)"/>
+  <br/>
+  <label for="description">Certificate Description</label>
+  <br/>
+  <textarea name="description" [(ngModel)]="description" (change)="handleDescriptionChange($event)"></textarea>
+  <br/>
+  <label for="file">Certificate File</label>
+  <br/>
+  <input name="certficate" type="file" (change)="handleFileChange($event)">
+  <br/>
+  <input type="button" value="Insert Certificate" (click)="handleCertificateInsertion()">
+</form>

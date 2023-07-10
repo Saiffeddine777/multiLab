@@ -1,3 +1,5 @@
+import { log } from "console"
+import { pathOfTheFile } from "../files/multer"
 import{createService, destoryAService, findAllServices, findOneService, updateOneService} from "../models/services"
 
 export const createOneService=  async function(req:any,res:any){
@@ -6,6 +8,18 @@ export const createOneService=  async function(req:any,res:any){
        const results = await createService(title,sector,category,analysis,description,imageUrl,accredited)
        console.log(results)
        res.status(200).json(results)
+    }
+    catch(err){
+        console.log(err)
+        res.status(500).json(err)
+    }
+}
+
+export const createServiceImage = async function(req:any,res:any){
+    console.log(req)
+   try{ 
+    console.log("file Inserted")
+    res.status(200).json(pathOfTheFile)
     }
     catch(err){
         console.log(err)
