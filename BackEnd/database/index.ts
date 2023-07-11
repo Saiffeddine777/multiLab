@@ -59,14 +59,12 @@ const ReviewSchema = new mongoose.Schema<ReviewsDocument>({
 interface ClientDocument extends Document{
    clientName : string,
    project : string,
-   projectPhotoUrl :string,
    clientsLogoUrl:string
 }
 
 const ClientSchema = new mongoose.Schema<ClientDocument>({
    clientName:{type:String,required:true},
    project:{type:String,required:true},
-   projectPhotoUrl:{type:String},
    clientsLogoUrl:{type:String,required:true}
 })
 

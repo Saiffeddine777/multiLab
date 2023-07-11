@@ -1,4 +1,5 @@
 import { Service } from "../database";
+import { deleteFile } from "../files/logic/fileSystemImages";
 
 export const createService = function (
   title: string,
@@ -28,7 +29,16 @@ export const findOneService = function (id: string) {
   return Service.findById(id);
 };
 
-export const updateOneService = function (id: string, newData: any) {
+export const updateOneService = async function (id: string, newData: any){
+  if (newData.imageUrl){
+    const document:any= await Service.findById(id)
+    const deleteImage = await deleteFile(document.imageUrl)
+    await Service.updateOne(
+      {_id:id},
+      {$unset:
+        {imageUrl:1}
+      })
+  }
   return Service.findByIdAndUpdate(id, newData, {
     new: true,
   });

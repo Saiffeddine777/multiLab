@@ -1,0 +1,16 @@
+<p>add-client </p>
+<form>
+    <label for= "clientName" >Client Name:</label>
+    <br/>
+    <input name="clientName" [(ngModel)] = "clientName" (change)="handleClientNameChange($event)"/>
+    <br/>
+    <label for= "project" >Project:</label>
+    <br/>
+    <input name="project" [(ngModel)] = "project" (change)="handleProjectChange($event)"/>
+    <br/>
+    <label for= "file" >Choose Logo</label>
+    <br/>
+    <input type="file" name="logo" (change)="handleImageChange($event)"/>
+    <br/>
+    <input type="button" value="insert client" (click)="handleClientInsertion()"/>
+</form>

@@ -50,6 +50,19 @@ export const storageTeamMembers = multer.diskStorage({
     }
 })
 
+export const storageClients = multer.diskStorage({
+    destination:(req,file,cb)=>{
+        cb(null,"files/clients/")
+    },
+    filename:(req,file,cb)=>{
+       const fileExt = path.extname(file.originalname)
+       const name = namingTheFile()
+       pathOfTheFile =path.resolve(__dirname,"clients",name+fileExt)
+       cb(null,name+fileExt)
+    }
+})
+
+export const uploadClients = multer({storage:storageClients}) 
 export const uploadServices = multer({storage:storageServices})
 export const uploadCertificates = multer({storage:storageCertficates})
 export const uploadTeamImages = multer({storage:storageTeamMembers})

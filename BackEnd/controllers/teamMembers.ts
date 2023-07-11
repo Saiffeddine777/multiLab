@@ -1,3 +1,5 @@
+import e from "express"
+import { deleteFile, fromPathToTeamMemberImagString } from "../files/logic/fileSystemImages"
 import { pathOfTheFile } from "../files/multer"
 import {createTeamMember, deleteOneTeamMember, findAllTeamMember, findOneTeamMember, updateOneTeamMember} from "../models/teamMembers"
 
@@ -27,7 +29,12 @@ export const insertTeamImage= async function(req:any,res:any){
 export const getAllTeamMembers = async function(req:any,res:any) {
     try{
       const results = await findAllTeamMember()
-      res.status(200).json(results)
+      const transFormed:any[]=[]
+      await Promise.all(fromPathToTeamMemberImagString(results).map(async (e,i)=>{
+        const res = await e
+        transFormed.push(res)
+      }))
+      res.status(200).json(transFormed)
     }
     catch(err){
         console.log(err)
@@ -50,7 +57,8 @@ export const getOneTeamMembers =async function(req:any,res:any) {
 export const deleteATeamMember = async function(req:any,res:any){
     const {id} = req.params
     try{
-        const results = await deleteOneTeamMember(id)
+        const results:any = await deleteOneTeamMember(id)
+        const imageToDelete = await deleteFile(results.teamMemberPhotoUrl)
         res.status(200).json(results)
     }
     catch(err){

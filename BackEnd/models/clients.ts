@@ -3,13 +3,11 @@ import { Client } from "../database";
 export const createClient = function (
   clientName: string,
   project: string,
-  projectPhotoUrl: string,
   clientsLogoUrl: string
 ) {
   return Client.create({
     clientName: clientName,
     project: project,
-    projectPhotoUrl: projectPhotoUrl,
     clientsLogoUrl: clientsLogoUrl,
   });
 };

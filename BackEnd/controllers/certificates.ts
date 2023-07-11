@@ -1,3 +1,4 @@
+import { deleteFile, fromPathToCertFileString } from "../files/logic/fileSystemImages"
 import { pathOfTheFile } from "../files/multer"
 import {createCertificate, deleteOneCertficate, findAllCertficates, findOneCerticate, updateOneCertificate} from "../models/certificates"
 
@@ -27,7 +28,12 @@ export const insertCertficateFile = async function(req:any,res:any){
 export const getAllCerticates = async function(req:any,res:any){
     try{
       const results = await findAllCertficates()
-      res.status(200).json(results)
+      const transformed :any []= []
+      await Promise.all(fromPathToCertFileString(results).map(async(e,i)=>{
+        const res = await e
+        transformed.push(res)
+      })) 
+      res.status(200).json(transformed)
     }
     catch(err){
         console.log(err)
@@ -63,7 +69,8 @@ export const updateCerticate = async function(req:any,res:any){
 export const deleteCertficate= async function(req:any,res:any){
     const {id} = req.params
     try{
-       const results = await deleteOneCertficate(id)
+       const results:any = await deleteOneCertficate(id)
+       const certficateToDelete = await deleteFile(results.fileUrl)
        res.status(200).json(results)
     }
     catch(err){

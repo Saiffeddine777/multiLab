@@ -8,6 +8,7 @@ import { AddServiceComponent } from './add-service/add-service.component';
 import { FormsModule } from '@angular/forms';
 import { AddCertificateComponent } from './add-certificate/add-certificate.component';
 import { AddTeamMemberComponent } from './add-team-member/add-team-member.component';
+import { AddClientComponent } from './add-client/add-client.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { AddTeamMemberComponent } from './add-team-member/add-team-member.compon
     MessagesComponent,
     AddServiceComponent,
     AddCertificateComponent,
-    AddTeamMemberComponent
+    AddTeamMemberComponent,
+    AddClientComponent
   ],
   imports: [
     BrowserModule,

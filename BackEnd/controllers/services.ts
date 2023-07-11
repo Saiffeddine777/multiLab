@@ -1,6 +1,7 @@
 import { log } from "console"
 import { pathOfTheFile } from "../files/multer"
 import{createService, destoryAService, findAllServices, findOneService, updateOneService} from "../models/services"
+import { deleteFile, fromPathToServiceImageString } from "../files/logic/fileSystemImages"
 
 export const createOneService=  async function(req:any,res:any){
     const {title,sector,category,analysis,description,imageUrl,accredited} = req.body
@@ -28,10 +29,15 @@ export const createServiceImage = async function(req:any,res:any){
 }
 
 export const getAllServices = async function (req:any,res:any) {
+    
     try{
       const results = await findAllServices()
-      console.log(results)
-      res.status(200).json(results)
+      let transformed : any[]=[]
+        await Promise.all(fromPathToServiceImageString(results).map(async(e,i)=>{
+        const res = await e
+        transformed.push(res)
+      }))
+      res.status(200).json(transformed)
     }
     catch(err){
         console.log(err)
@@ -69,8 +75,9 @@ export const changeOneSerrvice = async function(req:any,res:any){
 export const removeAService = async function(req:any,res:any){
     const {id}= req.params
     try{
-       const results = await destoryAService(id)
+       const results:any = await destoryAService(id)
        console.log(results)
+       const imageDelete = await deleteFile(results.imageUrl)
        res.status(200).json(results)
     }
     catch(err){
