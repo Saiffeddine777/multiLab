@@ -1,4 +1,5 @@
 import {Certificate} from "../database"
+import { deleteFile } from "../files/logic/fileSystemImages"
 
 export const createCertificate = function(
     name: string,
@@ -26,7 +27,11 @@ export const deleteOneCertficate = function(id:string){
     return Certificate.findByIdAndRemove(id)
 }
 
-export const updateOneCertificate = function(id:string,newData:any){
+export const updateOneCertificate = async function(id:string,newData:any){
+    if (newData.fileUrl){
+        const certificate:any= await Certificate.findById(id)
+        const fileToDelete = await deleteFile(certificate.fileUrl)
+    }
     return Certificate.findByIdAndUpdate(id,newData,{
             new:true
          })

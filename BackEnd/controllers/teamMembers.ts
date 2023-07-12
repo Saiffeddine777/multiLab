@@ -2,6 +2,7 @@ import e from "express"
 import { deleteFile, fromPathToTeamMemberImagString } from "../files/logic/fileSystemImages"
 import { pathOfTheFile } from "../files/multer"
 import {createTeamMember, deleteOneTeamMember, findAllTeamMember, findOneTeamMember, updateOneTeamMember} from "../models/teamMembers"
+import { imageTojpeg } from "../files/logic/sharp"
 
 export const makeATeamMember = async function(req:any,res:any){
     const {teamMember,teamMemberRole , teamMemberDescription,teamMemberEmail,teamMemberPhotoUrl } = req.body
@@ -17,8 +18,10 @@ export const makeATeamMember = async function(req:any,res:any){
 
 export const insertTeamImage= async function(req:any,res:any){
     try{
-        console.log("team Member Image inserted")
-        res.status(200).json(pathOfTheFile)
+        const convertedPath = await imageTojpeg(pathOfTheFile)
+        const deleteOldImage = await deleteFile(pathOfTheFile)
+        console.log("team Member Image inserted and converted")
+        res.status(200).json(convertedPath)
     }
     catch(err){
         console.log(err)

@@ -2,6 +2,7 @@ import { log } from "console"
 import { pathOfTheFile } from "../files/multer"
 import{createService, destoryAService, findAllServices, findOneService, updateOneService} from "../models/services"
 import { deleteFile, fromPathToServiceImageString } from "../files/logic/fileSystemImages"
+import { imageTojpeg } from "../files/logic/sharp"
 
 export const createOneService=  async function(req:any,res:any){
     const {title,sector,category,analysis,description,imageUrl,accredited} = req.body
@@ -19,8 +20,9 @@ export const createOneService=  async function(req:any,res:any){
 export const createServiceImage = async function(req:any,res:any){
     console.log(req)
    try{ 
-    console.log("file Inserted")
-    res.status(200).json(pathOfTheFile)
+    const convertedPath = await imageTojpeg(pathOfTheFile)
+    const imageToDelete = await deleteFile(pathOfTheFile)
+    res.status(200).json(convertedPath)
     }
     catch(err){
         console.log(err)

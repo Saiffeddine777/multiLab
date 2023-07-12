@@ -33,11 +33,6 @@ export const updateOneService = async function (id: string, newData: any){
   if (newData.imageUrl){
     const document:any= await Service.findById(id)
     const deleteImage = await deleteFile(document.imageUrl)
-    await Service.updateOne(
-      {_id:id},
-      {$unset:
-        {imageUrl:1}
-      })
   }
   return Service.findByIdAndUpdate(id, newData, {
     new: true,

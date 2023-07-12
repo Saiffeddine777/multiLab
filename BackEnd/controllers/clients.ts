@@ -1,4 +1,5 @@
-import { fromPathToClientImageString } from "../files/logic/fileSystemImages"
+import { deleteFile, fromPathToClientImageString } from "../files/logic/fileSystemImages"
+import { imageTopng } from "../files/logic/sharp"
 import { pathOfTheFile } from "../files/multer"
 import {createClient,deleteAClient,findAllClients, findOneClient, updateOneClient} from "../models/clients"
 
@@ -16,8 +17,10 @@ export const makeAClient = async function(req:any,res:any){
 
 export const uploadImage = async function(req:any,res:any){
     try{
-       console.log("logo inserted")
-       res.status(200).json(pathOfTheFile)
+       const convertedPath = await imageTopng(pathOfTheFile)
+       const imageToDelete = await deleteFile(pathOfTheFile)
+       res.status(200).json(convertedPath)
+       console.log("logo inserted and converted")
     }
     catch(err){
        console.log(err)
@@ -69,7 +72,8 @@ export const updateAclient = async function(req:any,res:any){
 export const removeAclient = async function(req:any ,res:any){
     const {id} =  req.params
     try{
-        const results = await deleteAClient(id)
+        const results:any = await deleteAClient(id)
+        const clientToDelete = await deleteFile(results.clientsLogoUrl)
         res.status(200).json(results)
     }
     catch(err){
