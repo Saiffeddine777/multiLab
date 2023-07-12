@@ -2,7 +2,7 @@ import { createAsyncThunk , createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import Address from "../../../Address";
 
-interface TeamMember{
+export interface TeamMember{
   _id: string,
   teamMember: string,
   teamMemberRole: string,

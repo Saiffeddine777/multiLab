@@ -1,5 +1,5 @@
 import e from "express"
-import { deleteFile, fromPathToTeamMemberImagString } from "../files/logic/fileSystemImages"
+import { deleteFile, fromPathToTeamMemberImagString, stringfyFile } from "../files/logic/fileSystemImages"
 import { pathOfTheFile } from "../files/multer"
 import {createTeamMember, deleteOneTeamMember, findAllTeamMember, findOneTeamMember, updateOneTeamMember} from "../models/teamMembers"
 import { imageTojpeg } from "../files/logic/sharp"
@@ -48,7 +48,9 @@ export const getAllTeamMembers = async function(req:any,res:any) {
 export const getOneTeamMembers =async function(req:any,res:any) {
     const{id} = req.params
     try{
-       const results = await findOneTeamMember(id)
+       const results:any = await findOneTeamMember(id)
+       const stringImage = await stringfyFile(results.teamMemberPhotoUrl)
+       results.teamMemberPhotoUrl = stringImage
        res.status(200).json(results)
     }
     catch(err){

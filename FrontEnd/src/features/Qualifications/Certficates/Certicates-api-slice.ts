@@ -2,7 +2,7 @@ import { createSlice,createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import Address from "../../../Address";
 
-interface Certificate {
+export interface Certificate {
     _id: string,
     name: string,
     description: string,
