@@ -13,7 +13,6 @@ export default function OneCertificate() {
     React.useEffect(()=>{
        dispatch(getOneCertificate(id))
     },[id,dispatch])
-     
   return (
     <>
     <div>OneCertificate</div>

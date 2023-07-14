@@ -1,0 +1,7 @@
+<p>send link</p>
+
+<label>Put the Email of the reviewer here</label>
+<br/>
+<input placeholder="Email" [(ngModel)]="email" (change)="handleEmailChange($event)"/>
+<br/>
+<input type="button" value="send review from" (click)="handleSendingReviewForm()"/>

@@ -1,4 +1,4 @@
-import { deleteFile, fromPathToCertFileString } from "../files/logic/fileSystemImages"
+import { deleteFile, fromPathToCertFileString, stringfyFile } from "../files/logic/fileSystemImages"
 import { pathOfTheFile } from "../files/multer"
 import {createCertificate, deleteOneCertficate, findAllCertficates, findOneCerticate, updateOneCertificate} from "../models/certificates"
 
@@ -44,7 +44,9 @@ export const getAllCerticates = async function(req:any,res:any){
 export const getOneCertificate= async function(req:any,res:any){
     const {id} = req.params
     try{
-        const results =  await findOneCerticate(id)
+        const results:any =  await findOneCerticate(id)
+        const stringingPdf = await stringfyFile(results.fileUrl)
+        results.fileUrl = stringingPdf
         res.status(200).json(results)
     }
     catch(err){

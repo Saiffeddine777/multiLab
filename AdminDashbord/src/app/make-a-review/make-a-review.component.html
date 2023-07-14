@@ -1,0 +1,29 @@
+<p>Write a review</p>
+
+<label>Reviewer Name</label>
+<br/>
+<input name="Reviewer Name" placehoder="Reviewer Name" [(ngModel)]="reviewerName" (change)="handleReviewerNameChange($event)"/>
+<br/>
+<label>E mail</label>
+<br/>
+<input name="email" placehoder="e-mail" [(ngModel)]="email" (change)="handleEmailChange($event)"/>
+<br/>
+<label>Review Text</label>
+<br/>
+<textarea name="text" placehoder="Review Text" [(ngModel)]="text" (change)="handleReviewerTextChange($event)"></textarea>
+<br/>
+<label>Rating</label>
+<br/>
+<select name="rating" type="number" placehoder="Give rating" [(ngModel)]="rating" (change)="handleRatingChange($event)">
+    <option value=0>0</option>
+    <option value=1>1</option>
+    <option value=2>2</option>
+    <option value=3>3</option>
+    <option value=4>4</option>
+    <option value=5>5</option>
+</select>
+<br/>
+<label>Send Review</label>
+<button (click)="handleReviewSending()">send</button>
+<br/>
+<br/>

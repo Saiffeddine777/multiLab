@@ -9,6 +9,8 @@ import { FormsModule } from '@angular/forms';
 import { AddCertificateComponent } from './add-certificate/add-certificate.component';
 import { AddTeamMemberComponent } from './add-team-member/add-team-member.component';
 import { AddClientComponent } from './add-client/add-client.component';
+import { MakeAReviewComponent } from './make-a-review/make-a-review.component';
+import { SendReviewEmailComponent } from './send-review-email/send-review-email.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { AddClientComponent } from './add-client/add-client.component';
     AddServiceComponent,
     AddCertificateComponent,
     AddTeamMemberComponent,
-    AddClientComponent
+    AddClientComponent,
+    MakeAReviewComponent,
+    SendReviewEmailComponent
   ],
   imports: [
     BrowserModule,

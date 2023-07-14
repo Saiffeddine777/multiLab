@@ -1,3 +1,4 @@
+import { sendReviewEmail } from "../mailer/nodeMailerConfig"
 import { createAreview , destroyOne, findAll, findOne } from "../models/reviews"
 
 export const makeAreview =  async function(req:any,res:any){
@@ -11,6 +12,18 @@ export const makeAreview =  async function(req:any,res:any){
        console.log(err)
        res.status(500).json(err)
     }
+}
+
+export const sendReviewEmailRequest = async function (req:any,res:any) {
+     const {email} = req.body  
+     try{
+      const mailResponce = await sendReviewEmail(email)
+      res.status(200).json(mailResponce)
+     }
+     catch(err){
+      console.log(err)
+      res.status(500).json(err)
+     }
 }
 
 export const getAll = async function(req:any,res:any){
