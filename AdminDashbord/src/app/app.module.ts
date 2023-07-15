@@ -11,6 +11,11 @@ import { AddTeamMemberComponent } from './add-team-member/add-team-member.compon
 import { AddClientComponent } from './add-client/add-client.component';
 import { MakeAReviewComponent } from './make-a-review/make-a-review.component';
 import { SendReviewEmailComponent } from './send-review-email/send-review-email.component';
+import { ClientsComponent } from './clients/clients.component';
+import { TeamComponent } from './team/team.component';
+import { ServicesComponent } from './services/services.component';
+import { ReviewsComponent } from './reviews/reviews.component';
+import { CertificatesComponent } from './certificates/certificates.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +26,12 @@ import { SendReviewEmailComponent } from './send-review-email/send-review-email.
     AddTeamMemberComponent,
     AddClientComponent,
     MakeAReviewComponent,
-    SendReviewEmailComponent
+    SendReviewEmailComponent,
+    ClientsComponent,
+    TeamComponent,
+    ServicesComponent,
+    ReviewsComponent,
+    CertificatesComponent
   ],
   imports: [
     BrowserModule,

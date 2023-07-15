@@ -7,6 +7,7 @@ import teamMemberReducer from "../features/Qualifications/Team/Team-slice"
 import clientReducer from "../features/Portfolio/Portfolio-slice"
 import oneteamMemberReducer from "../features/Qualifications/Team/TeamMember/TeamMember-api-slice.ts"
 import oneCertificateReducer from "../features/Qualifications/Certficates/OneCertificate/OneCertificate-api-slice"
+import reviewsReducer from "../features/reviews/Reviews-api-slice.ts"
 
 
 
@@ -19,7 +20,8 @@ const store = configureStore({
         teamMembers : teamMemberReducer,
         clients: clientReducer,
         oneTeamMember:oneteamMemberReducer,
-        oneCertificate :oneCertificateReducer
+        oneCertificate :oneCertificateReducer,
+        reviews: reviewsReducer
     }
 })
 
