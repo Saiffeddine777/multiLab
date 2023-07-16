@@ -24,25 +24,23 @@ export class UpdateACertificateComponent implements OnInit {
     this.toUpdate = this.router.snapshot.paramMap.get("name") || ""
    }
 
-   
-
    handleNameChange(e:any):void{
       this.name = e.target.value
-      console.log(createObjectWithVariables(this,["router","__ngContext__","id"]))
+      console.log(createObjectWithVariables(this,["router","__ngContext__","id","toUpdate"]))
    }
    handleReferenceChange(e:any):void{
       this.reference = e.target.value
-      console.log(createObjectWithVariables(this,["router","__ngContext__","id"]))
+      console.log(createObjectWithVariables(this,["router","__ngContext__","id","toUpdate"]))
    }
 
    handleDescriptionChange(e:any):void {
       this.description = e.target.value
-      console.log(createObjectWithVariables(this,["router","__ngContext__","id"]))
+      console.log(createObjectWithVariables(this,["router","__ngContext__","id","toUpdate"]))
    }
 
    handleFileChange(e:any):void{
       this.file = e.target.files[0]
-      console.log(createObjectWithVariables(this,["router","__ngContext__","id"]))
+      console.log(createObjectWithVariables(this,["router","__ngContext__","id","toUpdate"]))
    } 
 
    handleCertificateUpdate():void{
@@ -52,14 +50,14 @@ export class UpdateACertificateComponent implements OnInit {
         axios.post(`${Address}/api/certificates/certificate`,formData)
            .then(res=>{
               axios.put(`${Address}/api/certificates/update/${this.id}`,{
-                newData:{fileUrl:res.data,...createObjectWithVariables(this,["router","__ngContext__","id"])}
+                newData:{fileUrl:res.data,...createObjectWithVariables(this,["router","__ngContext__","id","toUpdate"])}
               }).then(res=>console.log(res.data))
                 .catch(err=>console.log(err))
            }).catch(err=>{console.log(err)})
       }
       else{
             axios.put(`${Address}/api/certificates/update/${this.id}`,
-              {newData:{...createObjectWithVariables(this,["router","__ngContext__","id"])}})
+              {newData:{...createObjectWithVariables(this,["router","__ngContext__","id","toUpdate"])}})
               .then(res=>console.log(res.data))
               .catch(err=>console.log(err))
           }
