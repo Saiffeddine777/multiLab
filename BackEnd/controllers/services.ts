@@ -28,7 +28,7 @@ export const createServiceImage = async function(req:any,res:any){
     }
     else{
       console.log("service image inserted")
-      res.status(200).json(pathOfTheFile)
+       res.status(200).json(pathOfTheFile)
     }
     }
     catch(err){

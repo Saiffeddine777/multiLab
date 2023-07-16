@@ -17,6 +17,7 @@ import { ServicesComponent } from './services/services.component';
 import { ReviewsComponent } from './reviews/reviews.component';
 import { CertificatesComponent } from './certificates/certificates.component';
 import { HomeComponent } from './home/home.component';
+import { UpdateACertificateComponent } from './update-a-certificate/update-a-certificate.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { HomeComponent } from './home/home.component';
     ServicesComponent,
     ReviewsComponent,
     CertificatesComponent,
-    HomeComponent
+    HomeComponent,
+    UpdateACertificateComponent
   ],
   imports: [
     BrowserModule,

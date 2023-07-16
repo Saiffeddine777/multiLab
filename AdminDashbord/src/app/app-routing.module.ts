@@ -13,22 +13,24 @@ import { ReviewsComponent } from './reviews/reviews.component';
 import { SendReviewEmailComponent } from './send-review-email/send-review-email.component';
 import { ServicesComponent } from './services/services.component';
 import { TeamComponent } from './team/team.component';
+import { UpdateACertificateComponent } from './update-a-certificate/update-a-certificate.component';
 
 
 const routes: Routes = [
   {path:"",component:HomeComponent},
-  {path:"",component:AddCertificateComponent},
-  {path:"",component:AddClientComponent},
-  {path:"",component:AddTeamMemberComponent},
-  {path:"",component:AddServiceComponent},
-  {path:"",component:CertificatesComponent},
-  {path:"",component:ClientsComponent},
-  {path:"",component:MakeAReviewComponent},
-  {path:"",component:MessagesComponent},
-  {path:"",component:ReviewsComponent},
-  {path:"",component:SendReviewEmailComponent},
-  {path:"",component:ServicesComponent},
-  {path:"",component:TeamComponent}
+  {path:"addCertificate",component:AddCertificateComponent},
+  {path:"addClient",component:AddClientComponent},
+  {path:"addTeamMember",component:AddTeamMemberComponent},
+  {path:"addService",component:AddServiceComponent},
+  {path:"certificates",component:CertificatesComponent},
+  {path:"clients",component:ClientsComponent},
+  {path:"makeAReview",component:MakeAReviewComponent},
+  {path:"messages",component:MessagesComponent},
+  {path:"reviews",component:ReviewsComponent},
+  {path:"sendReviewEmail",component:SendReviewEmailComponent},
+  {path:"services",component:ServicesComponent},
+  {path:"team",component:TeamComponent},
+  {path:"updateCertificate/:id/:name",component:UpdateACertificateComponent}
 ]
 
 @NgModule({

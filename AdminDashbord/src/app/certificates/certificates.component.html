@@ -1,9 +1,12 @@
 <p>certificates works!</p>
+<button (click)="navigateToAddCertificates()">Add Certificate</button>
 <div>
     <div *ngFor="let certificate of certificates">
         <p>{{certificate.name}}</p>
         <p>{{certificate.description}}</p>
         <p>{{certificate.reference}}</p>
         <a [href] ="getPdfUrl(certificate.fileUrl)" download="{{certificate.name}}">Download Certificate</a>
+        <button (click)="navigateToUpdateCertificate(certificate._id,certificate.name)">Update Certficate</button>
+        <button (click) ="deleteCertificate(certificate._id)">Delete Certficate</button>
     </div>
 </div>
