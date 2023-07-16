@@ -1,1 +1,11 @@
 <p>messages works!</p>
+<div>
+    <div *ngFor ="let message of messages">
+        <p>{{message.firstName}} {{message.lastName}}</p>
+        <p>{{message.title}}</p>
+        <p>{{message.message}}</p>
+        <p>{{message.adress}}</p>
+        <p>{{message.email}}</p>
+        <p>{{message.phoneNumber}}</p>
+    </div>
+</div>

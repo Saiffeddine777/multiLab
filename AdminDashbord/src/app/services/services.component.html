@@ -1,1 +1,11 @@
 <p>services works!</p>
+<div>
+    <div *ngFor="let service of services">
+        <p>{{service.title}}</p>
+        <p>{{service.sector}}</p>
+        <p>{{service.category}}</p>
+        <p>{{service.analysis}}</p>
+        <p>{{service.description}}</p>
+        <img [src]="getImageSrc(service.imageUrl)"/>
+    </div>
+</div>

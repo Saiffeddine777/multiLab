@@ -18,10 +18,16 @@ export const makeATeamMember = async function(req:any,res:any){
 
 export const insertTeamImage= async function(req:any,res:any){
     try{
+        if(!pathOfTheFile.includes(".jpg")){
         const convertedPath = await imageTojpeg(pathOfTheFile)
         const deleteOldImage = await deleteFile(pathOfTheFile)
         console.log("team Member Image inserted and converted")
         res.status(200).json(convertedPath)
+        }
+        else{
+        console.log("team Member Image inserted and converted")
+        res.status(200).json(pathOfTheFile)
+        }
     }
     catch(err){
         console.log(err)

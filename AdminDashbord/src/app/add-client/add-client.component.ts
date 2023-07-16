@@ -34,7 +34,7 @@ export class AddClientComponent {
             project:this.project,
             clientsLogoUrl:res.data 
           })
-          .then(res=>{
+          .then(res=>{  
             console.log("Client inserted",res)
           })
           .catch(err=>{

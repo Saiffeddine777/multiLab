@@ -1,1 +1,9 @@
 <p>clients works!</p>
+<div>
+    <div *ngFor="let client of clients">
+       <p>{{client.clientName}}</p>
+       <p>{{client.project}}</p>
+       <img [src]="getImageSrc(client.clientsLogoUrl)"/>
+       <button (click)="handleDelete(client._id)">delete client</button>
+    </div>
+</div> 

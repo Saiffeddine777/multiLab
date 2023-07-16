@@ -1,1 +1,9 @@
 <p>certificates works!</p>
+<div>
+    <div *ngFor="let certificate of certificates">
+        <p>{{certificate.name}}</p>
+        <p>{{certificate.description}}</p>
+        <p>{{certificate.reference}}</p>
+        <a [href] ="getPdfUrl(certificate.fileUrl)" download="{{certificate.name}}">Download Certificate</a>
+    </div>
+</div>

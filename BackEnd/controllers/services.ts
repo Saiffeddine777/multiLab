@@ -20,9 +20,16 @@ export const createOneService=  async function(req:any,res:any){
 export const createServiceImage = async function(req:any,res:any){
     console.log(req)
    try{ 
-    const convertedPath = await imageTojpeg(pathOfTheFile)
-    const imageToDelete = await deleteFile(pathOfTheFile)
-    res.status(200).json(convertedPath)
+    if(!pathOfTheFile.includes(".jpg")){
+      const convertedPath = await imageTojpeg(pathOfTheFile)
+      const imageToDelete = await deleteFile(pathOfTheFile)
+      console.log("service image inserted")
+      res.status(200).json(convertedPath)
+    }
+    else{
+      console.log("service image inserted")
+      res.status(200).json(pathOfTheFile)
+    }
     }
     catch(err){
         console.log(err)

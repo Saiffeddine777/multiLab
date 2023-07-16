@@ -1,1 +1,10 @@
 <p>team works!</p>
+<div>
+    <div *ngFor="let member of team">
+        <p>{{member.teamMember}}</p>
+        <p>{{member.teamMemberRole}}</p>
+        <p>{{member.teamMemberDescription}}</p>
+        <p>{{member.teamMemberEmail}}</p>
+        <img [src] = "getImageSrc(member.teamMemberPhotoUrl)"/>
+    </div>
+</div>

@@ -16,6 +16,7 @@ import { TeamComponent } from './team/team.component';
 import { ServicesComponent } from './services/services.component';
 import { ReviewsComponent } from './reviews/reviews.component';
 import { CertificatesComponent } from './certificates/certificates.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { CertificatesComponent } from './certificates/certificates.component';
     TeamComponent,
     ServicesComponent,
     ReviewsComponent,
-    CertificatesComponent
+    CertificatesComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
