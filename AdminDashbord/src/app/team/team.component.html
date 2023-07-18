@@ -6,5 +6,7 @@
         <p>{{member.teamMemberDescription}}</p>
         <p>{{member.teamMemberEmail}}</p>
         <img [src] = "getImageSrc(member.teamMemberPhotoUrl)"/>
+        <button (click) = "handleDeleteTeamMember(member._id)">delete this Member</button>
+        <button (click) = "navigateToUpdateTeamMember(member._id,member.teamMember)">Update This Member</button>
     </div>
 </div>

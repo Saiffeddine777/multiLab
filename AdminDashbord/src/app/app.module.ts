@@ -18,6 +18,9 @@ import { ReviewsComponent } from './reviews/reviews.component';
 import { CertificatesComponent } from './certificates/certificates.component';
 import { HomeComponent } from './home/home.component';
 import { UpdateACertificateComponent } from './update-a-certificate/update-a-certificate.component';
+import { UpdateClientComponent } from './update-client/update-client.component';
+import { UpdateServiceComponent } from './update-service/update-service.component';
+import { UpdateTeamMemberComponent } from './update-team-member/update-team-member.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,10 @@ import { UpdateACertificateComponent } from './update-a-certificate/update-a-cer
     ReviewsComponent,
     CertificatesComponent,
     HomeComponent,
-    UpdateACertificateComponent
+    UpdateACertificateComponent,
+    UpdateClientComponent,
+    UpdateServiceComponent,
+    UpdateTeamMemberComponent
   ],
   imports: [
     BrowserModule,

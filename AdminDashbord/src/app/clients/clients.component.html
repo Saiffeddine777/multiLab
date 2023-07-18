@@ -5,5 +5,6 @@
        <p>{{client.project}}</p>
        <img [src]="getImageSrc(client.clientsLogoUrl)"/>
        <button (click)="handleDelete(client._id)">delete client</button>
+       <button (click)="navigateToupdateClient(client._id,client.clientName)">Update Client</button>
     </div>
 </div> 

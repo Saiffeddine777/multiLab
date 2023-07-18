@@ -15,5 +15,17 @@ export class HomeComponent {
   navigatestoCertificates():void{
     this.router.navigate(["/certificates"]) 
   }
+
+  navigateToServices():void{
+    this.router.navigate(["/services"])
+  }
+
+  navigateToClients():void{
+    this.router.navigate(["/clients"])
+  }
+
+  navigateToTeam():void{
+    this.router.navigate(["/team"])
+  }
   
 }

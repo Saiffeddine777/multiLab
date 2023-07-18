@@ -7,5 +7,7 @@
         <p>{{service.analysis}}</p>
         <p>{{service.description}}</p>
         <img [src]="getImageSrc(service.imageUrl)"/>
+        <button (click)="handleDeleteService(service._id)">Delete this Service</button>
+        <button (click)="navigateToUpdate(service._id , service.title)">Update This service</button>
     </div>
 </div>

@@ -46,14 +46,16 @@ interface ReviewsDocument extends Document{
    reviewerName:string,
    email:string,
    text :string,
-   rating : number
+   rating : number,
+   approved :boolean
 }
 
 const ReviewSchema = new mongoose.Schema<ReviewsDocument>({
    reviewerName:{type:String,required:true},
    email:{type:String,required: true},
    text:{type:String,required:true},
-   rating:{type:Number,required:true}
+   rating:{type:Number,required:true},
+   approved:{type:Boolean,required:true}
 })
 
 interface ClientDocument extends Document{

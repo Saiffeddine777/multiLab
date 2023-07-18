@@ -1,5 +1,5 @@
 import { sendReviewEmail } from "../mailer/nodeMailerConfig"
-import { createAreview , destroyOne, findAll, findOne } from "../models/reviews"
+import { createAreview , destroyOne, findAll, findOne,findApprovedReviews,updateToApproved } from "../models/reviews"
 
 export const makeAreview =  async function(req:any,res:any){
     const {reviewerName, email,text, rating} = req.body
@@ -38,6 +38,17 @@ export const getAll = async function(req:any,res:any){
     }
 }
 
+export const getApprovedReviews = async function(req:any,res:any){
+     try{
+      const results = await findApprovedReviews()
+      res.status(200).json(results)
+     }
+     catch(err){
+       console.log(err)
+       res.status(500).json(err)
+     }
+}
+
 export const getOne = async function(req:any,res:any){
     const {id}= req.params
     try{
@@ -63,3 +74,15 @@ export const deleteOne = async function(req:any,res:any){
        res.status(500).json(err)
     }
 } 
+
+export const approveOne =async function(req:any,res:any) {
+     const {id} = req.params
+     try{
+       const result = await updateToApproved(id)
+       res.status(200).json(result)
+     }
+     catch(err){
+        console.log(err)
+        res.status(500).json(err)
+     }
+}

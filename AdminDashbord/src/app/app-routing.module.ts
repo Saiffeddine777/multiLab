@@ -14,6 +14,9 @@ import { SendReviewEmailComponent } from './send-review-email/send-review-email.
 import { ServicesComponent } from './services/services.component';
 import { TeamComponent } from './team/team.component';
 import { UpdateACertificateComponent } from './update-a-certificate/update-a-certificate.component';
+import { UpdateServiceComponent } from './update-service/update-service.component';
+import { UpdateTeamMemberComponent } from './update-team-member/update-team-member.component';
+import { UpdateClientComponent } from './update-client/update-client.component';
 
 
 const routes: Routes = [
@@ -30,7 +33,10 @@ const routes: Routes = [
   {path:"sendReviewEmail",component:SendReviewEmailComponent},
   {path:"services",component:ServicesComponent},
   {path:"team",component:TeamComponent},
-  {path:"updateCertificate/:id/:name",component:UpdateACertificateComponent}
+  {path:"updateCertificate/:id/:name",component:UpdateACertificateComponent},
+  {path:"updateService/:id/:name",component:UpdateServiceComponent},
+  {path:"updateTeamMember/:id/:name",component:UpdateTeamMemberComponent},
+  {path:"updateClient/:id/:name",component:UpdateClientComponent}
 ]
 
 @NgModule({

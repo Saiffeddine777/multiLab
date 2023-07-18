@@ -11,11 +11,24 @@ export const createAreview = function (
     email: email,
     text: text,
     rating: rating,
+    approved:false
   });
 }
 
 export const findAll = function(){
     return Review.find()
+}
+
+export const findApprovedReviews = function(){
+    return Review.find(
+      {approved:true}
+    )  
+}
+
+export const updateToApproved = function(id:string){
+  return Review.updateOne({_id:id},
+    {approved:true},
+    {new:true})
 }
 
 export const findOne = function(id:string){

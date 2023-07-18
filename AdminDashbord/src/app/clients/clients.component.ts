@@ -1,6 +1,7 @@
 import { Component,OnInit,ChangeDetectorRef } from '@angular/core';
 import axios from 'axios';
 import Address from 'src/Address';
+import {Router} from "@angular/router"
 
 @Component({
   selector: 'app-clients',
@@ -10,8 +11,12 @@ import Address from 'src/Address';
 export class ClientsComponent {
   clients :any [] = []
 
-  constructor(private cdRef: ChangeDetectorRef ){
+  constructor(private cdRef: ChangeDetectorRef,private router:Router){
     
+  }
+
+  navigateToupdateClient(id:string,name:string):void{
+     this.router.navigate([`updateClient/${id}/${name}`])
   }
   
   handleClientsFetching(){

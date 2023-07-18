@@ -20,4 +20,8 @@ export class ReviewsComponent {
       this.handlleReviewsFetching()
    }
 
+   handleReviewApproval():void{
+      
+   }
+
 }
