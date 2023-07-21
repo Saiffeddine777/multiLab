@@ -6,6 +6,11 @@
         <p>{{message.message}}</p>
         <p>{{message.adress}}</p>
         <p>{{message.email}}</p>
+        <p>{{(message.adressed && "this message has been addressed by the Admin you can delete it") || "this message has not been addressed please adress this message"}}</p>
         <p>{{message.phoneNumber}}</p>
+        <button (click)="handleAddresedMessage(message._id)">Message Addressed</button>
+        <button (click)="handleDeleteMessage(message._id)">delete this message</button>
     </div>
+
+    <button (click)="handleDeleteAddressedMessages()">delete addressed messages</button>
 </div>

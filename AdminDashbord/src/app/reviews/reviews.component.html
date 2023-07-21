@@ -6,6 +6,8 @@
        <p>{{review.email}}</p>
        <p>{{review.text}}</p>
        <p>{{review.rating}}</p> 
-       <button (click)="handleReviewApproval()" >Approve Review</button>
+       <p>{{(review.approved && "this Review is approved") || "this is not approved"}}</p>
+       <button (click)="handleReviewApproval(review._id)" >Approve Review</button>
+       <button (click)="deleteThisReview(review._id)">delete this Review</button>
     </div>
 </div>

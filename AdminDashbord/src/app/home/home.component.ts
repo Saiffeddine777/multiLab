@@ -22,10 +22,18 @@ export class HomeComponent {
 
   navigateToClients():void{
     this.router.navigate(["/clients"])
-  }
+  } 
 
   navigateToTeam():void{
     this.router.navigate(["/team"])
+  }
+
+  navigateToReviews():void{
+    this.router.navigate(["/reviews"])
+  }
+
+  navigateToMessages():void{
+    this.router.navigate(["/messages"])
   }
   
 }

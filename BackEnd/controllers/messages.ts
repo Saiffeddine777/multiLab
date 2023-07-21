@@ -1,4 +1,4 @@
-import {createAMessage, destroyMessage, findAllMessages, findOneMessage} from "../models/messages"
+import {createAMessage, destroyMessage, findAllMessages, findOneMessage , updateToAddressed,deleteAddressedMessages} from "../models/messages"
 
 export const createMessage=  async function(req:any,res:any){
     const {   firstName,
@@ -40,6 +40,18 @@ export const getAllMessages =  async function(req:any,res:any){
     }
 }
 
+export const makeMessageAddressed = async function (req:any,res:any) {
+    const {id}  = req.params
+    try{
+        const results = await updateToAddressed(id)
+        res.status(200).json(results)
+    }
+    catch(err){
+        console.log(err)
+        res.stastus(500).json(err)
+    }
+}
+
 export const getOneMessage = async function(req:any,res:any){
     const {id}= req.params
     try{
@@ -66,4 +78,16 @@ export const removeAMessage = async function(req:any,res:any){
          res.status(500).json(err)
      }
 }
+
+export const deleteDealtWithMessages = async function(req:any,res:any){
+    try{  
+        const results = await deleteAddressedMessages()
+        res.status(200).json(results)
+    }
+    catch(err){
+        console.log(err)
+        res.status(500).json(err)
+    }
+}
+
 

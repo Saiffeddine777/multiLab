@@ -16,9 +16,11 @@ import {Routes,Route} from "react-router-dom"
 
 
 
+
 function App() {
   return (
-    <>    
+    <> 
+    <div className='bg-blue-500 text-white p-4'>   
     <Navbar/>
     <Routes>
        <Route path ={pathHomePage} element ={<HomePage/>}/>
@@ -33,6 +35,7 @@ function App() {
        <Route path = {pathToReviews} element ={<Reviews/>}/>
     </Routes>
     <Footer/>
+    </div>
     </>
   )
 }

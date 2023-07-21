@@ -1,0 +1,181 @@
+@font-face{
+    font-family:"greycliffcf-bold";
+    src: url("./fonts/fontspring-demo-greycliffcf-bold-webfont.woff") format("woff"),
+         url("./fonts/fontspring-demo-greycliffcf-bold-webfont.woff2")  format("woff2") ;
+  }
+  
+  @font-face{
+    font-family: "greycliffcf-boldoblique";
+    src: url("./fonts/fontspring-demo-greycliffcf-boldoblique-webfont.woff") format("woff"),
+         url("./fonts/fontspring-demo-greycliffcf-boldoblique-webfont.woff2") format("woff2");
+  }
+  
+  @font-face{
+    font-family: "greycliffcf-demibold";
+    src: url("./fonts/fontspring-demo-greycliffcf-demibold-webfont.woff") format("woff"), 
+         url("./fonts/fontspring-demo-greycliffcf-demibold-webfont.woff2") format("woff2");
+  }
+  
+  
+  @font-face{
+    font-family: "greycliffcf-demiboldoblique";
+    src: url("./fonts/fontspring-demo-greycliffcf-demiboldoblique-webfont.woff") format("woff"),
+         url("./fonts/fontspring-demo-greycliffcf-demiboldoblique-webfont.woff2") format("woff2");
+  }
+  
+  @font-face{
+    font-family: "greycliffcf-extrabold";
+    src: url("./fonts/fontspring-demo-greycliffcf-extrabold-webfont.woff") format("woff"),
+         url("./fonts/fontspring-demo-greycliffcf-extrabold-webfont.woff2") format("woff2");
+  }
+  
+  @font-face{
+    font-family: "greycliffcf-extraboldoblique";
+    src: url("./fonts/fontspring-demo-greycliffcf-extraboldoblique-webfont.woff") format("woff"),
+         url("./fonts/fontspring-demo-greycliffcf-extraboldoblique-webfont.woff2") format("woff2");
+  }
+  
+  @font-face{
+    font-family: "greycliffcf-extralight";
+    src: url("./fonts/fontspring-demo-greycliffcf-extralight-webfont.woff") format("woff"),
+         url("./fonts/fontspring-demo-greycliffcf-extralight-webfont.woff2") format("woff2");
+  }
+  
+  @font-face{
+    font-family : "greycliffcf-extralightoblique";
+    src: url("./fonts/fontspring-demo-greycliffcf-extralightoblique-webfont.woff") format("woff"),
+         url("./fonts/fontspring-demo-greycliffcf-extralightoblique-webfont.woff2") format("woff2");
+  }
+  
+  @font-face{
+    font-family : "greycliffcf-heavy";
+    src: url("./fonts/fontspring-demo-greycliffcf-heavy-webfont.woff") format("woff"),
+         url("./fonts/fontspring-demo-greycliffcf-heavy-webfont.woff2") format("woff2");
+  }
+  
+  @font-face{
+    font-family : "greycliffcf-heavyoblique";
+    src: url("./fonts/fontspring-demo-greycliffcf-heavyoblique-webfont.woff") format("woff"),
+         url("./fonts/fontspring-demo-greycliffcf-heavyoblique-webfont.woff2") format("woff2");
+  }
+  
+  @font-face{
+    font-family : "greycliffcf-light";
+    src: url("./fonts/fontspring-demo-greycliffcf-light-webfont.woff") format("woff"),
+         url("./fonts/fontspring-demo-greycliffcf-light-webfont.woff2") format("woff2");
+  }
+  
+  @font-face{
+    font-family : "greycliffcf-lightoblique";
+    src: url("./fonts/fontspring-demo-greycliffcf-lightoblique-webfont.woff") format("woff"),
+         url("./fonts/fontspring-demo-greycliffcf-lightoblique-webfont.woff2") format("woff2");
+  }
+  
+  @font-face{
+    font-family : "greycliffcf-medium";
+    src: url("./fonts/fontspring-demo-greycliffcf-medium-webfont.woff") format("woff"),
+         url("./fonts/fontspring-demo-greycliffcf-medium-webfont.woff2") format("woff2");
+  }
+  
+  @font-face{
+    font-family : "greycliffcf-mediumoblique";
+    src: url("./fonts/fontspring-demo-greycliffcf-mediumoblique-webfont.woff") format("woff"),
+         url("./fonts/fontspring-demo-greycliffcf-mediumoblique-webfont.woff2") format("woff2");
+  }
+  
+  @font-face{
+    font-family : "greycliffcf-regular";
+    src: url("./fonts/fontspring-demo-greycliffcf-regular-webfont.woff") format("woff"),
+         url("./fonts/fontspring-demo-greycliffcf-regular-webfont.woff2") format("woff2");
+  }
+  
+  @font-face{
+    font-family : "greycliffcf-regularoblique";
+    src: url("./fonts/fontspring-demo-greycliffcf-regularoblique-webfont.woff") format("woff"),
+         url("./fonts/fontspring-demo-greycliffcf-regularoblique-webfont.woff2") format("woff2");
+  }
+  
+  @font-face{
+    font-family : "greycliffcf-thin";
+    src: url("./fonts/fontspring-demo-greycliffcf-thin-webfont.woff") format("woff"),
+         url("./fonts/fontspring-demo-greycliffcf-thin-webfont.woff2") format("woff2");
+  }
+  
+  @font-face{
+    font-family : "greycliffcf-thinoblique";
+    src: url("./fonts/fontspring-demo-greycliffcf-thinoblique-webfont.woff") format("woff"),
+         url("./fonts/fontspring-demo-greycliffcf-thinoblique-webfont.woff2") format("woff2");
+  }
+
+  .greycliffcf-bold{
+    font-family: greycliffcf-bold;
+  }
+
+  .greycliffcf-boldoblique{
+    font-family : greycliffcf-boldoblique;
+  }
+
+  .greycliffcf-demibold{
+    font-family :greycliffcf-demibold;
+  }
+
+  .greycliffcf-demiboldoblique{
+    font-family: greycliffcf-demiboldoblique;
+  }
+
+  .greycliffcf-extrabold{
+    font-family: greycliffcf-extrabold;
+  }
+
+  .greycliffcf-extraboldoblique{
+    font-family :greycliffcf-extraboldoblique;
+  }
+  
+  .greycliffcf-extralight{
+    font-family :greycliffcf-extralight;
+  }
+
+  .greycliffcf-extralightoblique{
+    font-family : greycliffcf-extralightoblique;
+  }
+
+  .greycliffcf-heavy{
+    font-family : greycliffcf-heavy;
+  }
+
+  .greycliffcf-heavyoblique{
+    font-family :greycliffcf-heavyoblique;
+  }
+
+  .greycliffcf-light{
+    font-family :greycliffcf-light;
+  }
+
+  .greycliffcf-lightoblique{
+    font-family :greycliffcf-lightoblique;
+  }
+
+  .greycliffcf-medium{
+    font-family :greycliffcf-medium;
+  }
+
+  .greycliffcf-mediumoblique{
+    font-family :greycliffcf-mediumoblique;
+  }
+
+  .greycliffcf-regular{
+    font-family :greycliffcf-regular;
+  }
+  
+  .greycliffcf-regularoblique{
+    font-family: greycliffcf-regularoblique;
+  }
+
+  .greycliffcf-thin{
+    font-family :greycliffcf-thin;
+  }
+
+  .greycliffcf-thinoblique{
+    font-family: greycliffcf-thinoblique;
+  }
+

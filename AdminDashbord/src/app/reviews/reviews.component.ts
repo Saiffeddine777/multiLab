@@ -16,12 +16,20 @@ export class ReviewsComponent {
         .catch(err=>console.log(err))
    }
 
-   ngOnInit():void{
+   ngOnInit():void{ 
       this.handlleReviewsFetching()
    }
 
-   handleReviewApproval():void{
-      
+   handleReviewApproval(id:string):void{
+        axios.put(`${Address}/api/reviews/approve/${id}`)
+           .then(res=>console.log(res.data))
+           .catch(err=>console.log(err))      
+   }
+
+   deleteThisReview(id:string):void{
+         axios.delete(`${Address}/api/reviews/delete/${id}`)
+           .then(res=>console.log(res.data))
+           .catch(err=>console.log(err))
    }
 
 }
