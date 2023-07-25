@@ -179,3 +179,9 @@
     font-family: greycliffcf-thinoblique;
   }
 
+  body{
+    background-image: url("./images/doctor-performing-medical-research-lab.jpg");
+    background-size: cover;
+    background-blend-mode: multiply;
+    background-color: #a1dfed;
+  }

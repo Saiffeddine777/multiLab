@@ -1,0 +1,73 @@
+/* Carousel.css */
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 650px;
+  overflow: hidden;
+}
+
+.carousel-slides {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}
+
+.slide {
+  position: relative;
+  /* Add this to make the message container position relative to the slide */
+  flex: none;
+  width: 100%;
+  height: 100%;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.carousel-navigation {
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-button {
+  background-color: gray;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.prev {
+  background-color: gray;
+}
+
+.next {
+  background-color: gray;
+}
+
+/* New styles for the slide message */
+
+.slide-message {
+  position: absolute;
+  top: 20px;
+  /* Adjust the value to position the message as desired */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Add a background color for the message container */
+  padding: 30px 50px;
+  /* Adjust the padding to make the message container bigger */
+  border-radius: 10px;
+  z-index: 1;
+  /* Make sure the message appears on top of the image */
+  color: white;
+  font-size: 40px;
+  /* Adjust the font-size to make the message bigger */
+  font-weight: bold;
+}

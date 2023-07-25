@@ -1,21 +1,24 @@
 import React from 'react'
-import Certificates from './Certficates/Certificates'
-import Team from './Team/Team'
-import { useNavigate } from 'react-router-dom'
-import { pathToReviews } from '../../Route Paths'
+import { pathCerfications, pathTeam } from '../../Route Paths'
+import {useNavigate} from "react-router-dom"
+
 
 export default function Qualifications() {
   const navigate = useNavigate()
 
-  function handleReviewsNavigation(){
-     navigate(pathToReviews)
+  function navigateToTeam():void{
+      navigate(pathTeam)
   }
+
+  function navigateToCertificates():void{
+      navigate(pathCerfications)
+  }
+
   return (
     <>
     <div>Qualifications</div>
-    <a onClick={handleReviewsNavigation}>See Reviews</a>
-    <Certificates/>
-    <Team/>
+    <button onClick={navigateToCertificates}>Certificates</button>
+    <button onClick={navigateToTeam}>team</button>
     </>
   )
 }

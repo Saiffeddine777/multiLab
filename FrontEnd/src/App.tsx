@@ -20,7 +20,7 @@ import {Routes,Route} from "react-router-dom"
 function App() {
   return (
     <> 
-    <div className='bg-blue-500 text-white p-4'>   
+    <div className='mt-8 mb-8 text-white p-4'>   
     <Navbar/>
     <Routes>
        <Route path ={pathHomePage} element ={<HomePage/>}/>

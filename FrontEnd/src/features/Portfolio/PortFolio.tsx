@@ -1,6 +1,8 @@
 import React from 'react'
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
 import { getClients } from './Portfolio-slice'
+import  {useNavigate} from "react-router-dom"
+import { pathToReviews } from '../../Route Paths'
 
 export default function PortFolio() {
   const clients = useAppSelector(state=>state.clients)
@@ -9,10 +11,17 @@ export default function PortFolio() {
   React.useEffect(()=>{
     dispatch(getClients())
   },[dispatch])
+
+  const navigate = useNavigate()
+
+  function handleReviewsNavigation(){
+     navigate(pathToReviews)
+  }
   
   return (
     <>
     <div>PortFolio</div>
+    <a onClick={handleReviewsNavigation}>See Reviews</a>
     {clients.error &&
         <p>error getting the clients</p>}
     {clients.loading &&
