@@ -7,7 +7,7 @@ export default function Footer() {
   const coordinates = useAppSelector((state) => state.coordinates);
 
   return (
-<div className="footer-container bg-blue-500 p-6 flex flex-wrap justify-between rounded-lg font-light hover:bg-white hover:text-black transition duration-300 ease-in-out">
+<div className="footer-container bg-blue-500 p-6 flex flex-wrap justify-between rounded-lg font-light hover:bg-white hover:text-black transition duration-300 ease-in-out mt-10">
   <div className="contact-info w-full sm:w-1/3">
     <ul>
       <li className="mb-2 hover:text-blue-500">Address: {coordinates.address}</li>

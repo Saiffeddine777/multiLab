@@ -20,7 +20,7 @@ import {Routes,Route} from "react-router-dom"
 function App() {
   return (
     <> 
-    <div className='mt-8 mb-8 text-white p-4'>   
+    <div className='mt-3 mb-3 text-white p-4'>   
     <Navbar/>
     <Routes>
        <Route path ={pathHomePage} element ={<HomePage/>}/>
@@ -34,7 +34,9 @@ function App() {
        <Route path ={pathToOneCertificate} element ={<OneCertificate/>}/>
        <Route path = {pathToReviews} element ={<Reviews/>}/>
     </Routes>
+    <div className="mb-3 mt-10  ">
     <Footer/>
+    </div>
     </div>
     </>
   )

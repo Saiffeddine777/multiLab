@@ -185,3 +185,14 @@
     background-blend-mode: multiply;
     background-color: #a1dfed;
   }
+
+  .smooth-scroll {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease; /* Increase the duration to 1s */
+  }
+  
+  .smooth-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+  } 
