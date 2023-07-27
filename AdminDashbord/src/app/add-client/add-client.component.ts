@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import axios from 'axios';
 import Address from 'src/Address';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,6 +13,7 @@ export class AddClientComponent {
   clientName:string=""
   project:string=""
   file:File|null = null
+  constructor(private router:Router){}
 
   handleClientNameChange(e:any){
      this.clientName= e.target.value
@@ -36,6 +38,7 @@ export class AddClientComponent {
           })
           .then(res=>{  
             console.log("Client inserted",res)
+            this.router.navigate([`clients`])
           })
           .catch(err=>{
             console.log("error inserting client",err)
@@ -45,4 +48,5 @@ export class AddClientComponent {
       console.log("error inserting the image",err)
      })
   }
+  
 }

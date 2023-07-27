@@ -18,6 +18,10 @@ export class ClientsComponent {
   navigateToupdateClient(id:string,name:string):void{
      this.router.navigate([`updateClient/${id}/${name}`])
   }
+
+  navigateToAddClients():void{
+     this.router.navigate([`addClient`])
+  }
   
   handleClientsFetching(){
      axios.get(`${Address}/api/clients/all`)

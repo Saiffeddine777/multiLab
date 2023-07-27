@@ -26,23 +26,33 @@ export default function Certificates() {
 
   return (
     <>
-    <div>Certificates</div>
-    {certificates.error
-      && <p>error fetching</p>}
-    {certificates.loading
-      && <p>..loading</p>}
-    {certificates.certificates.map((e,i)=>{
-      return(
-        <>
-        <div key={e._id} >
-          <p>{e.name}</p>
-          <p>{e.description}</p>
-          <a href={stringToPdf(e.fileUrl)} download={e.name}>download Certficate</a>
-          <button value="see preview" onClick={()=>handleNavigationToOneCertificate(e._id)}>see preview</button>
-        </div>
-        </>
-      )
-    })}
+<div className="p-4 bg-gradient-to-r from-blue-500 to-blue-700 text-white mt-10 rounded-lg shadow-lg">
+  <div className="text-3xl font-bold mb-4 greycliffcf-extrabold">Certificates</div>
+
+  {certificates.error && <p className="text-red-500">Error fetching certificates</p>}
+  {certificates.loading && <p>Loading...</p>}
+
+  {certificates.certificates.map((e, i) => (
+    <div
+      key={e._id}
+      className="my-4 border rounded-lg p-4 bg-white shadow-md hover:shadow-lg transition-all duration-300"
+    >
+      <p className="text-gray-800 font-semibold mb-2">{e.name}</p>
+      <div className="aspect-w-16 aspect-h-9">
+        <iframe src={stringToPdf(e.fileUrl)} className="w-full h-full" title="PDF Viewer" />
+      </div>
+      <button
+        className="mt-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-300 greycliffcf-lightoblique"
+        onClick={() => handleNavigationToOneCertificate(e._id)}
+      >
+        See more details
+      </button>
+    </div>
+  ))}
+</div>
+
+
     </>
+    
   )
 }

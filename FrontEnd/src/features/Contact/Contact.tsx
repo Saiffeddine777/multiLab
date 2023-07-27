@@ -20,13 +20,13 @@ export default function Contact() {
 
   return (
     
- <div className="grid place-items-center h-screen mt-10 mb-10 ">
-  <div className=" bg-blue-500 p-4 rounded-lg space-y-4 w-1/2">
+ <div className="grid place-items-center h-screen mt-10 mb-10">
+  <div className=" group bg-blue-500 p-4 rounded-lg space-y-4 w-1/2 hover:bg-white hover:text-gray-500 transition-all duration-300">
   <div className ="flex flex-col items-center justify-center"> 
     <h2 className="greycliffcf-heavyoblique text-3xl">Send us a message</h2>
   </div>
-  <div className="flex flex-col">
-    <label htmlFor="firstName" className="text-gray-800 font-semibold greycliffcf-lightoblique">
+  <div className="flex flex-col ">
+    <label htmlFor="firstName" className="text-white font-semibold greycliffcf-lightoblique group-hover:text-gray-500">
       First Name
     </label>
     <input
@@ -34,12 +34,12 @@ export default function Contact() {
       name="firstName"
       type="text"
       placeholder="First Name"
-      className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
+      className="px-3 py-2 border border-black rounded-lg focus:outline-none focus:border-blue-500 text-black"
       onChange={(e) => dispatch(firstNameReducer(e.target.value))}
     />
   </div>
-  <div className="flex flex-col">
-    <label htmlFor="lastName" className="text-gray-800 font-semibold greycliffcf-lightoblique">
+  <div className="flex flex-col ">
+    <label htmlFor="lastName" className="text-white font-semibold greycliffcf-lightoblique group-hover:text-gray-500">
       Last Name
     </label>
     <input
@@ -47,12 +47,12 @@ export default function Contact() {
       name="lastName"
       type="text"
       placeholder="Last Name"
-      className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
+      className="px-3 py-2 border border-black rounded-lg focus:outline-none focus:border-blue-500 text-black"
       onChange={(e) => dispatch(lastNameReducer(e.target.value))}
     />
   </div>
-  <div className="flex flex-col">
-    <label htmlFor="address" className="text-gray-800 font-semibold greycliffcf-lightoblique">
+  <div className="flex flex-col ">
+    <label htmlFor="address" className="text-white font-semibold greycliffcf-lightoblique group-hover:text-gray-500">
       Address
     </label>
     <input
@@ -60,12 +60,12 @@ export default function Contact() {
       name="address"
       type="text"
       placeholder="Address"
-      className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
+      className="px-3 py-2 border border-black rounded-lg focus:outline-none focus:border-blue-500 text-black"
       onChange={(e) => dispatch(adressReducer(e.target.value))}
     />
   </div>
   <div className="flex flex-col">
-    <label htmlFor="email" className="text-gray-800 font-semibold greycliffcf-lightoblique">
+    <label htmlFor="email" className="text-white font-semibold greycliffcf-lightoblique group-hover:text-gray-500">
       E-mail
     </label>
     <input
@@ -73,12 +73,12 @@ export default function Contact() {
       name="email"
       type="text"
       placeholder="E-mail"
-      className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
+      className="px-3 py-2 border border-black rounded-lg focus:outline-none focus:border-blue-500 text-black"
       onChange={(e) => dispatch(emailReducer(e.target.value))}
     />
   </div>
   <div className="flex flex-col">
-    <label htmlFor="phoneNumber" className="text-gray-800 font-semibold greycliffcf-lightoblique">
+    <label htmlFor="phoneNumber" className="text-white font-semibold greycliffcf-lightoblique group-hover:text-gray-500">
       Phone Number
     </label>
     <input
@@ -86,12 +86,12 @@ export default function Contact() {
       name="phoneNumber"
       type="text"
       placeholder="Phone Number"
-      className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
+      className="px-3 py-2 border border-black rounded-lg focus:outline-none focus:border-blue-500 text-black"
       onChange={(e) => dispatch(phoneNumberReducer(e.target.value))}
     />
   </div>
-  <div className="flex flex-col">
-    <label htmlFor="title" className="text-gray-800 font-semibold greycliffcf-lightoblique">
+  <div className="flex flex-col ">
+    <label htmlFor="title" className="text-white font-semibold greycliffcf-lightoblique group-hover:text-gray-500">
       Title
     </label>
     <input
@@ -99,27 +99,27 @@ export default function Contact() {
       name="title"
       type="text"
       placeholder="Title"
-      className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
+      className="px-3 py-2 border border-black rounded-lg focus:outline-none focus:border-blue-500 text-black"
       onChange={(e) => dispatch(titleReducer(e.target.value))}
     />
   </div>
-  <div className="flex flex-col">
-    <label htmlFor="message" className="text-gray-800 font-semibold greycliffcf-lightoblique">
+  <div className="flex flex-col ">
+    <label htmlFor="message" className="text-white font-semibold greycliffcf-lightoblique group-hover:text-gray-500">
       Message
     </label>
     <textarea
       id="message"
       name="message"
       placeholder="Write your message here"
-      className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 h-40 resize-y"
+      className="px-3 py-2 border border-black rounded-lg focus:outline-none focus:border-blue-500 h-40 resize-y text-black"
       onChange={(e) => dispatch(messageReducer(e.target.value))}
     ></textarea>
   </div>
-  <div>
+  <div className = "flex justify-center items-center">
     <input
       type="button"
       value="Send Message"
-      className="px-4 py-2 bg-blue-500 text-white rounded-lg cursor-pointer hover:bg-blue-600 transition-all duration-300 greycliffcf-lightoblique"
+      className="px-4 py-2 bg-blue-100 text-black rounded-lg cursor-pointer hover:bg-blue-600 hover:text-white transition-all duration-300 greycliffcf-lightoblique"
       onClick={() => dispatch(createMessage(message.value))}
     />
   </div>

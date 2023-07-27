@@ -1,5 +1,6 @@
 <p>clients works!</p>
 <div>
+    <button (click)="navigateToAddClients()">Add Client</button>
     <div *ngFor="let client of clients">
        <p>{{client.clientName}}</p>
        <p>{{client.project}}</p>
