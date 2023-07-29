@@ -1,0 +1,6 @@
+The transtion duration in the component homepage
+ * who we are?
+ * what we do?
+ * how we do it?
+ * what we promise? 
+

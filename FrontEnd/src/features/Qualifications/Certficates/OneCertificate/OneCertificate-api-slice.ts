@@ -1,7 +1,8 @@
-import {createAsyncThunk,createSlice} from "@reduxjs/toolkit"
+import {createAsyncThunk,createSlice,PayloadAction} from "@reduxjs/toolkit"
 import Address from "../../../../Address"
 import axios from "axios"
 import { Certificate } from "../Certicates-api-slice"
+
 
 const oneCertificate : Certificate ={
     _id: "",
@@ -40,5 +41,7 @@ const oneCertifcateSlice = createSlice({
           })
     }
 })
+ 
+
 
 export default oneCertifcateSlice.reducer
