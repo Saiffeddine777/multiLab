@@ -29,7 +29,7 @@ export default function PortFolio() {
 
   <div className="grid grid-cols-4 gap-4 mt-4">
     {clients.clients.map((e:any, i:number) => (
-      <div key={i} className="group border rounded-lg p-4 bg-gray-100 hover:bg-blue-500">
+      <div key={i} className="group border rounded-lg p-4 bg-gray-100 hover:bg-blue-500 transition duration-300">
         <p className="text-gray-800 font-semibold greycliffcf-boldoblique group-hover:text-white">Client: {e.clientName}</p>
         <p className="text-gray-600 greycliffcf-lightoblique group-hover:text-white">Project: {e.project}</p>
         <img src={`data:image/type;base64,${e.clientsLogoUrl}`} alt="Client Logo" className="w-40 h-40 mt-4 mx-auto" />

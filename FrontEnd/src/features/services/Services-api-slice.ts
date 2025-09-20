@@ -10,6 +10,7 @@ interface Service {
     analysis: string,
     description: string,
     accredited: boolean,
+    imageUrl:string,
     __v: number
 }
 

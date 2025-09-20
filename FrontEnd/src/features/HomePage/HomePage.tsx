@@ -36,19 +36,19 @@ export default function HomePage() {
     <div className="mt-8 mb-8" id="homepage-content">
       <div>
         <div>
-          <div className="flex flex-col items-center justify-center smooth-scroll">
+          <div className="flex flex-col items-center justify-center">
             <div>
               <Carousel></Carousel>
             </div>
           </div>
         </div>
 
-        <div className="group bg-gray-100 p-8 mt-4 mt-8 rounded-lg transition-colors duration-300 hover:bg-blue-500 hover:text-white smooth-scroll">
-          <div className="max-w-screen-xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800 greycliffcf-bold group-hover:text-white">
+        <div className="group bg-gray-100 p-8 mt-4 mt-8 rounded-lg transition-colors hover:bg-blue-500 hover:text-white smooth-scroll transition duration-300">
+          <div className="max-w-screen-xl mx-auto transition duration-300">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800 greycliffcf-bold group-hover:text-white transition duration-300">
               who we are
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center transition duration-300">
               <img
                 className="w-full h-full object-cover rounded-lg"
                 src={buildingImage}
@@ -67,7 +67,7 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div className="group bg-gray-100 p-8 mt-4 mt-8 rounded-lg transition-colors duration-300 hover:bg-blue-500 hover:text-white smooth-scroll">
+        <div className="group bg-gray-100 p-8 mt-4 mt-8 rounded-lg transition-colors duration-300 hover:bg-blue-500 hover:text-white smooth-scroll transition duration-300">
           <div className="max-w-screen-xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
               <div className="text-gray-800 order-1 md:order-2">

@@ -36,7 +36,6 @@ export default function Qualifications() {
   <div className="sm:w-1/2 rounded-lg bg-white px-4 py-6 group hover:bg-blue-500 transition duration-300"
       onMouseEnter={()=>{dispatch(visibleReducer())}}
       onMouseLeave={()=>{dispatch(notVisibleReducer())}}
-     
   >
   <div className="flex flex-col items-center">
     <h2 className="text-xl font-semibold mb-2 group-hover:text-white">Certifications</h2>
@@ -50,8 +49,11 @@ export default function Qualifications() {
     </p>
   </div>
   <div className="flex justify-center mt-4">
-    {visible &&<img src={certify} className="rounded-lg" />}
-  </div>
+        <img
+          src={certify}
+          className={`rounded-lg ${visible ? "opacity-100 pointer-events-auto" : "opacity-50 pointer-events-none"} transition-all duration-300`}
+        />
+      </div>
   <div className="flex justify-center mt-4">
     <button
       className="px-4 py-2 bg-blue-500 text-white rounded-lg group-hover:bg-white group-hover:text-black cursor-pointer 
@@ -78,7 +80,7 @@ export default function Qualifications() {
         their unique skills. Together, we are driven by a shared vision to make a positive impact on the industries we
         serve.
       </p>
-      {visible1 && <img src={teamImage} className="rounded-lg"/>}
+      <img src={teamImage} className={`rounded-lg ${visible1 ? "opacity-100 pointer-events-auto" : "opacity-50 pointer-events-none"} transition-all duration-300`}/>
       <div className="flex justify-center mt-3">
         <button
           className="px-4 py-2 bg-blue-500 text-white rounded-lg cursor-pointer group-hover:bg-white group-hover:text-black hover:bg-blue-600 transition-all duration-300 greycliffcf-lightoblique"
